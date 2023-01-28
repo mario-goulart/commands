@@ -1,0 +1,9 @@
+;;; -*- scheme -*-
+((synopsis "Helpers to define commands")
+ (author "Mario Domenech Goulart")
+ (license "BSD")
+ (category data-structures)
+ (component-options
+  (csc-options "-O3" "-d1"))
+ (components
+  (extension commands)))
