@@ -1,5 +1,5 @@
 ;;; -*- scheme -*-
-((synopsis "Helpers to define commands")
+((synopsis "Helpers for programs that dispatch commands")
  (author "Mario Domenech Goulart")
  (license "BSD")
  (category data-structures)
