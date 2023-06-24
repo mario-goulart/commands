@@ -67,7 +67,7 @@
                    (loop (cdr commands))
                    (cons (car commands) (loop (cdr commands)))))))))
 
-(define (show-command-help command #!optional exit-code)
+(define (show-command-help command exit-code)
   (let ((port (if (and exit-code (not (zero? exit-code)))
                   (current-error-port)
                   (current-output-port))))
