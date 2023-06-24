@@ -21,9 +21,11 @@
 
 (import scheme)
 (import (chicken base)
+        (chicken format)
         (chicken pathname)
         (chicken process-context)
-        (chicken sort))
+        (chicken sort)
+        (chicken string))
 
 (define *commands* '())
 
@@ -75,11 +77,12 @@
   ;; Show the help message of the main program and all available
   ;; commands.
   (let ((this (pathname-strip-directory (program-name)))
+        (help-opts (format "[~a]" (string-intersperse (help-options) "|")))
         (port (if (and exit-code (not (zero? exit-code)))
                   (current-error-port)
                   (current-output-port))))
     (display #<#EOF
-Usage: #this <command> [<options>]
+Usage: #this #help-opts <command> [<options>]
 #message
 <commands>:
 
