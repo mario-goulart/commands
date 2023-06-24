@@ -2,7 +2,7 @@
 ((synopsis "Helpers for programs that dispatch commands")
  (author "Mario Domenech Goulart")
  (license "BSD")
- (category data-structures)
+ (category tools)
  (component-options
   (csc-options "-O3" "-d1"))
  (components
