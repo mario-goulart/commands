@@ -9,6 +9,7 @@
  command?
 
  define-command
+ undefine-command
  commands
  commands-ref
 
@@ -55,6 +56,16 @@
     (set! *commands*
           (cons (cons name (make-command name help proc))
                 *commands*))))
+
+(define (undefine-command name)
+  (set! *commands*
+        (reverse
+         (let loop ((commands *commands*))
+           (if (null? commands)
+               '()
+               (if (eq? (caar commands) name)
+                   (loop (cdr commands))
+                   (cons (car commands) (loop (cdr commands)))))))))
 
 (define (show-command-help command #!optional exit-code)
   (let ((port (if (and exit-code (not (zero? exit-code)))
