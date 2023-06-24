@@ -95,7 +95,7 @@
     (display #<#EOF
 Usage: #this #help-opts <command> [<options>]
 #message
-<commands>:
+<command>s:
 
 
 EOF
